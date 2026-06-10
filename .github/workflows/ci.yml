@@ -1,0 +1,12 @@
+name: CI Pipeline
+
+on:
+  push:
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hola mundo
+        run: echo "Hola desde GitHub Actions"
