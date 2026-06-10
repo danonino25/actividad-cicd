@@ -4,9 +4,23 @@ on:
   push:
 
 jobs:
-  saludo:
+
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hola mundo
-        run: echo "Hola desde GitHub Actions"
+
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Mostrar mensaje
+        run: echo "Dependencias instaladas correctamente"
